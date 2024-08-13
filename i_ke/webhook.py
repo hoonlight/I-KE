@@ -1,7 +1,4 @@
-import logging
 import httpx
-
-logger = logging.getLogger(__name__)
 
 
 def send_message(
@@ -21,7 +18,7 @@ def send_message(
         )
         message_id = response.json().get("id")
         print(f"Message sent successfully with id: {message_id}")
-    except httpx.HTTPError as e:
+    except Exception as e:
         print(e)
 
     return message_id
@@ -44,6 +41,4 @@ def edit_message(
             },
         )
     except Exception as e:
-        logger.exception(f"Failed to send discord webhook: {e}")
-
-    logger.info("Message edited successfully")
+        print(e)
