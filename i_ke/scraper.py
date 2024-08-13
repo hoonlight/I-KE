@@ -6,7 +6,7 @@ import httpx
 from i_ke import webhook
 
 
-def get_product_info(url: str) -> dict:
+def get_product_info(url: str) -> dict[str, str]:
     DISCORD_ADMIN_WEBHOOK_URL = os.getenv("DISCORD_ADMIN_WEBHOOK_URL")
 
     try:
