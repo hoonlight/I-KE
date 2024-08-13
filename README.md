@@ -13,5 +13,10 @@
 ```bash
 git clone https://github.com/hoonlight/i-ke.git
 cd i-ke
+```
+
+**Note**: `.env.example` 파일을 수정하고, 파일 이름을 `.env'로 변경하세요.
+
+```bash
 docker compose up -d --build
 ```
