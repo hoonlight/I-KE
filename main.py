@@ -26,11 +26,16 @@ def main():
                 color=0x00FF00,
             )
 
+        time.sleep(60)
+
         result = scraper.get_product_info(IKE_URL)
         update_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        manual = result.get("manual")
-        stock_button = result.get("stock_button")
+        manual = result.get("manual", None)
+        stock_button = result.get("stock_button", None)
+
+        if not manual or not stock_button:
+            continue
 
         if not stock_button == "구매 불가":
             change_detected = True
@@ -61,8 +66,6 @@ def main():
         description = f"**\n✅ 실시간 감지 - {update_time} updated\n\n\n🚫 현재 상태: {stock_button}\n\n📅 최근 공지: {manual[2:16]}...\n\n\n{info}**"
         color = 0x00FF00 if not change_detected else 0xFFFF00
         webhook.edit_message(DISCORD_WEBHOOK_URL, message_id, title, description, color)
-
-        time.sleep(60)
 
 
 if __name__ == "__main__":
