@@ -20,6 +20,7 @@ def send_message(
         print(f"Message sent successfully with id: {message_id}")
     except Exception as e:
         print(e)
+        message_id = None
 
     return message_id
 
