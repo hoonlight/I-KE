@@ -63,7 +63,7 @@ def main():
 
         title = "🔔 I-KE 알리미 🔔"
         info = f"❗ 입고 공지가 변경되거나, 상품이 입고되면 모두에게 알려드려요.\n\n🌐 [직접 확인하러 가기 <<< Click]({IKE_URL})"
-        description = f"**\n✅ [실시간 감지 : {update_time} updated](https://github.com/hoonlight/i-ke)\n\n\n💬 현재 상태 : '{stock_button}'\n\n📅 최근 공지 : '{manual.strip("* ")[:18]}...'\n\n\n{info}**"
+        description = f"**\n✅ [실시간 감지 : {update_time} updated](https://github.com/hoonlight/i-ke)\n\n\n💬 현재 상태 : _{stock_button}_\n\n📅 최근 공지 : _{manual.strip("* ")[:18]}..._\n\n\n{info}**"
         color = 0x00FF00 if not change_detected else 0xFFFF00
         webhook.edit_message(DISCORD_WEBHOOK_URL, message_id, title, description, color)
 
