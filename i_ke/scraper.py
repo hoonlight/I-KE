@@ -3,8 +3,6 @@ import logging
 import bs4
 import httpx
 
-url = "https://madeedam.com/goods/goods_view.php?goodsNo=1000001840"
-
 
 logger = logging.getLogger(__name__)
 

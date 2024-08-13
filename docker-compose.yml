@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: i-ke
-    restart: always
+    restart: no
     environment:
       - TZ=Asia/Seoul
