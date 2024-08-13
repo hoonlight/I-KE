@@ -1,0 +1,10 @@
+services:
+
+  i-ke:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: i-ke
+    restart: always
+    environment:
+      - TZ=Asia/Seoul
