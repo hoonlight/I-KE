@@ -8,3 +8,4 @@ services:
     restart: no
     environment:
       - TZ=Asia/Seoul
+      - PYTHONUNBUFFERED=1
