@@ -35,6 +35,14 @@ def main():
         stock_button = result.get("stock_button", None)
 
         if not manual or not stock_button:
+            title = "🔔 I-KE 알리미 🔔"
+            info = f"❗ 입고 공지가 변경되거나, 상품이 입고되면 모두에게 알려드려요.\n\n🌐 [직접 확인하러 가기 <<< Click]({IKE_URL})"
+            description = f"**\n✅ [실시간 감지 : Updated on {update_time}](https://github.com/hoonlight/i-ke)\n\n\n💬 현재 상태 : _구매 불가_\n\n📅 최근 공지 : _ 2/29(목) 12:00 재판매는..._\n\n\n{info}**"
+            color = 0x00FF00 if not change_detected else 0xFFFF00
+            webhook.edit_message(
+                DISCORD_WEBHOOK_URL, message_id, title, description, color
+            )
+            time.sleep(60)
             continue
 
         if not stock_button == "구매 불가":

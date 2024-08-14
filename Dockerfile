@@ -10,6 +10,7 @@ COPY requirements.txt .
 # Install any dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m playwright install
 
 # Copy the content of the local src directory to the working directory
 COPY . .
